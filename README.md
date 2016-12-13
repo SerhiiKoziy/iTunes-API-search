@@ -1,2 +1,1 @@
-# iTunesSearch
-iTunes API reactJS
+# react-basic

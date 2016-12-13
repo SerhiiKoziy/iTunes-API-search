@@ -1,0 +1,38 @@
+.registration-wr{
+  height: 100%;
+  background-color: white;
+  display: flex;
+
+
+  .form-wr{
+  //  flex-basis: 70%;
+    padding: 60px;
+    box-sizing: border-box;
+
+
+    form{
+      width: 335px;
+    }
+  }
+  .max-wr{
+    flex-basis: 30%;
+    background-color: #f4f4f4;
+    padding: 60px;
+    box-sizing: border-box;
+    h5{
+      color: #006ec5;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 28px;
+      margin: 0 0 60px 0;
+    }
+    p{
+      margin: 35px 0 0 20px;
+      color: #9b9b9b;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 24px;
+
+    }
+  }
+}
