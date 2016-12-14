@@ -1,2 +1,2 @@
 
-export { default as QuizReducer } from './QuizReducer';
+export { default as DataReduser } from './DataReduser';

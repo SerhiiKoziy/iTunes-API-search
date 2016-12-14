@@ -1,13 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import {combineReducers} from 'redux';
-import {QuizReducer} from '../reducers';
+import {DataReduser} from '../reducers';
 import createLogger from 'redux-logger';
 import { INITIAL_STATE } from '../constants/InitialState';
 
 
 const reducer = combineReducers({
-   quiz: QuizReducer,
+   data: DataReduser,
 })
 
 

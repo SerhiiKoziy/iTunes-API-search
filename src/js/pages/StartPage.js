@@ -9,7 +9,7 @@ import Button from '../components/Button/Button';
 import  Spinner from '../components/Spinner/Spinner';
 
 
-import $ from "jquery"
+
 import  {renderTextField, renderDropdownList, renderDropdownListSaveChange} from '../components/Fields/Fields';
 
 const mapStateToProps = (state) => state;
@@ -23,24 +23,11 @@ const mapDispatchToProps = (dispatch) => {
 export default class StartPage extends Component {
     constructor(props) {
         super(props);
-        // this.store = this.props.store;
         this.state = {
             isLoginOpened: false,
             isLoaded: true,
             selectGroup: 'name',
-            categories:['all', 'audiobook', 'ebook', 'movie', 'music', 'musicVideo', 'podcast', 'tvShow', 'shortFilm', 'software'],
-            categoriesEntities:{
-                    movie:['movieArtist', 'movie'],
-                    podcast:['podcastAuthor', 'podcast'],
-                    music:['musicArtist', 'musicTrack', 'album', 'musicVideo', 'mix'],
-                    musicVideo:['musicArtist', 'musicVideo'],
-                    audiobook:['audiobookAuthor', 'audiobook'],
-                    shortFilm:['shortFilmArtist', 'shortFilm', 'album', 'musicVideo', 'mix'],
-                    tvShow:['tvEpisode', 'tvSeason'],
-                    software:['software', 'iPadSoftware', 'macSoftware'],
-                    ebook:['ebook'],
-                    all:['movie', 'album', 'allArtist', 'podcast', 'musicVideo', 'mix', 'audiobook', 'tvSeason', 'allTrack'],
-            },
+
             nameArtist:'',
             currentCategory: 'all',
             currentEntity:'',
@@ -66,6 +53,13 @@ export default class StartPage extends Component {
     }
 
 
+    searchForm(data){
+        //let {nameArtist, currentCategory, currentEntity, limitList} = this.state
+        console.log('searchForm', data)
+        //this.props.actions.search(data);
+    }
+
+
     saveName(e){
         let name = e.target.value
 
@@ -76,96 +70,24 @@ export default class StartPage extends Component {
 
         this.setState({limitList:limit});
     }
-    click(res){
-        /*let media = this.state.currentCategory;
-        let nameArtist = this.state.nameArtist;
-
-        let jSonString = `http://itunes.apple.com/search?media=${media}&term=2&country=it&limit=15&attribute=genreIndex&entity=song&callback=?`
-        //let jSonString = `https://itunes.apple.com/search?media=${media}&term=${nameArtist.split(' ').join('+')}`
-
-        console.log(jSonString)
-        var self = this
-        function foo(){
-            self.setState({isLoaded:false});
-            return (
-                $.getJSON(jSonString,function(data) {
-                    console.log('123',data)
-                    if(data.results.length > 0){
-                        self.setState({isLoaded:true, resultSearching:data});
-                    }else if(data.results.length == 0){
-                        self.setState({isLoaded:'wasLoad', resultSearching:data});
-                    }
-                })
-            )
-        }
-
-        foo().done(function(result){
-            console.log(result)
-
-
-        })*/
-
-
-
-
-        {/*<script type="text/javascript">
-            var dataReceiver = function(response) {
-                console.log(response);
-                //window.data = response;
-            }
-        </script>
-
-        <script src="https://itunes.apple.com/search?term=jim+jones&country=ca&callback=dataReceiver"></script>*/}
+    click(res) {
 
     }
-
-    search(){
-        let self = this;
-        const {nameArtist, currentCategory, currentEntity, limitList} = self.state
-        this.setState({isLoaded:false});
-        if(nameArtist.length > 0){
-            $.ajax({
-                url:"http://itunes.apple.com/search",
-                data:{term:nameArtist, entity:currentEntity, media:currentCategory, limit:limitList},
-                type:"GET",
-                dataType: "jsonp",
-                success: function(data, dataType){
-                    let results = data.results
-                    console.log(data);
-
-                    //self.setState({searchingList:data})
-                    if(data.results.length > 0){
-                        self.setState({isLoaded:true, resultSearching:data});
-                    }else if(data.results.length == 0){
-                        self.setState({isLoaded:'wasLoad', resultSearching:data});
-                    }
-
-                }
-            })
-        }else{
-            this.setState({isLoaded:'needName'});
-            console.log(error, 'needName')
-        }
-
-    }
-
 
 
     render() {
-        let categories = this.state.categories;
+        let categories = this.props.data.categories;
         let currentCategory = this.state.currentCategory;
         let searchingList = this.state.resultSearching.results;
         let isLoaded = this.state.isLoaded;
 
-        let categoriesEntities = this.state.categoriesEntities[currentCategory]
+        let categoriesEntities = this.props.data.categoriesEntities[currentCategory]
         let currentEntity = this.state.currentEntity;
 
         console.log('searchingList', searchingList);
         return (
+
             <div className={`page start-page ${this.state.isLoginOpened ? 'step2' : ''}`}>
-
-
-
 
                     <div className="search-form">
                         <h3>itunes search</h3>
@@ -221,7 +143,7 @@ export default class StartPage extends Component {
 
 
                                 <Button type={'white'}
-                                    onClick={::this.search}
+                                    onClick={::this.searchForm}
                                     children="search"/>
                         </FormWr>
 
