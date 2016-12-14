@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5d5300a7-4eb9-40b8-b02c-45d27c2242b9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/common.css" afterPath="$PROJECT_DIR$/assets/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/media/_mobile.scss" afterPath="$PROJECT_DIR$/assets/sass/media/_mobile.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/sass/media/_tablet.scss" afterPath="$PROJECT_DIR$/assets/sass/media/_tablet.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/pages/StartPage.js" afterPath="$PROJECT_DIR$/src/js/pages/StartPage.js" />
-    </list>
+    <list default="true" id="5d5300a7-4eb9-40b8-b02c-45d27c2242b9" name="Default" comment="" />
     <ignored path="react-basic-master.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -28,7 +23,17 @@
     <splitter split-orientation="horizontal" split-proportion="0.526616">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="StartPage.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/package.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="726">
+                  <caret line="33" column="9" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="StartPage.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/js/pages/StartPage.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="586">
@@ -527,7 +532,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55872000" />
+    <option name="totallyTimeSpent" value="55941000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="2578" height="1408" extended-state="6" />
@@ -814,14 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="9" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/constants/Api" />
     <entry file="file://$PROJECT_DIR$/src/js/store/configureStore.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -900,6 +897,14 @@
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#1180#1351#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="9" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

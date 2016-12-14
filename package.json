@@ -1,7 +1,7 @@
 {
-  "name": "react-challenge-colorizr",
+  "name": "itunes-search",
   "version": "1.0.0",
-  "description": "Boilerplate for second React Challenge",
+  "description": "itunes-search with limites entities and categories",
   "main": "index.js",
   "scripts": {
     "start": "npm run clean && node server.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rtivital/react-challenge-colorizr.git"
+    "url": "git+https://github.com/SerhiiKoziy"
   },
   "keywords": [
     "react",
@@ -22,12 +22,12 @@
     "redux",
     "react-redux"
   ],
-  "author": "Vitaly Rtishchev <rtivital@gmail.com> (http://github.com/rtivital)",
+  "author": "Sho Koziy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rtivital/react-challenge-colorizr/issues"
+    "url": "https://github.com/SerhiiKoziy"
   },
-  "homepage": "https://github.com/rtivital/react-challenge-colorizr#readme",
+  "homepage": "https://github.com/SerhiiKoziy",
   "dependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "fabric": "^1.6.2",
