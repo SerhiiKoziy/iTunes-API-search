@@ -6,7 +6,7 @@ import {Field} from 'redux-form';
 import fecha from 'fecha';
 import FormWr from '../components/FormWr/FormWr';
 import Button from '../components/Button/Button';
-import  Spinner from '../components/Spinner/Spinner';
+import Spinner from '../components/Spinner/Spinner';
 
 
 
@@ -25,13 +25,14 @@ export default class StartPage extends Component {
         super(props);
         this.state = {
             isLoginOpened: false,
-            isLoaded: true,
+            isLoaded: false,
             selectGroup: 'name',
 
             nameArtist:'',
             currentCategory: 'all',
             currentEntity:'',
             limitList:'',
+
             resultSearching: {
                 results:[]
             },
@@ -53,10 +54,11 @@ export default class StartPage extends Component {
     }
 
 
-    searchForm(data){
-        //let {nameArtist, currentCategory, currentEntity, limitList} = this.state
+    searchForm(){
+        let {nameArtist, currentCategory, currentEntity, limitList} = this.state;
+        let data = {nameArtist, currentCategory, currentEntity, limitList}
         console.log('searchForm', data)
-        //this.props.actions.search(data);
+        this.props.actions.search(data);
     }
 
 
@@ -76,15 +78,19 @@ export default class StartPage extends Component {
 
 
     render() {
-        let categories = this.props.data.categories;
+
         let currentCategory = this.state.currentCategory;
-        let searchingList = this.state.resultSearching.results;
-        let isLoaded = this.state.isLoaded;
-
-        let categoriesEntities = this.props.data.categoriesEntities[currentCategory]
         let currentEntity = this.state.currentEntity;
+        let searchingList;
+        let isLoaded = this.props.data.isLoaded;
+        let categories = this.props.data.categories;
+        let categoriesEntities = this.props.data.categoriesEntities[currentCategory]
 
-        console.log('searchingList', searchingList);
+
+        if(isLoaded == true ){
+            searchingList = this.props.data.result;
+        }
+
         return (
 
             <div className={`page start-page ${this.state.isLoginOpened ? 'step2' : ''}`}>

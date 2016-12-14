@@ -1,5 +1,8 @@
 export const INITIAL_STATE = {
 
+
+
+    currentCategory: 'all',
     categories:['all', 'audiobook', 'ebook', 'movie', 'music', 'musicVideo', 'podcast', 'tvShow', 'shortFilm', 'software'],
 
     categoriesEntities:{
