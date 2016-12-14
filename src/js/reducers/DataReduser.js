@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 import { INITIAL_STATE } from '../constants/InitialState';
 
-export default function QuizReducer(state = INITIAL_STATE, action) {
+export default function DataReduser(state = INITIAL_STATE, action) {
 
   switch (action.type) {
 
