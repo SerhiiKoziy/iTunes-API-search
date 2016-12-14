@@ -163,9 +163,9 @@ export default class StartPage extends Component {
                              isLoaded == true &&(
                                 <ul className=''>
                                     {
-                                        searchingList.map((item) => {
+                                        searchingList.map((item, index) => {
                                         return (
-                                            <li key = {item.trackName}>
+                                            <li key = {index}>
                                                 <a href={item.collectionViewUrl} target="_blank">
                                                     <div className="image-view">
                                                         <img  src={item.artworkUrl100.replace('100x100', '1200x1200') || item.artworkUrl100} alt="image"/>

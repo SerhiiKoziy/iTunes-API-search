@@ -26,11 +26,13 @@
 
     .page.start-page .search-list ul li{
         width: 47.5%;
+        margin-right: 5%;
+    }
+
+    .page.start-page .search-list ul li:nth-child(3n) {
+        margin-right: 5%;
     }
     .page.start-page .search-list ul li:nth-child(2n) {
         margin-right: 0;
-    }
-    .page.start-page .search-list ul li:nth-child(3n) {
-        margin-right: 5%;
     }
 }
