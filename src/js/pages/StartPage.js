@@ -24,18 +24,10 @@ export default class StartPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isLoginOpened: false,
-            isLoaded: false,
-            selectGroup: 'name',
-
             nameArtist:'',
             currentCategory: 'all',
             currentEntity:'',
             limitList:'',
-
-            resultSearching: {
-                results:[]
-            },
 
         }
     }
