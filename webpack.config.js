@@ -1,38 +1,41 @@
-'use strict';
-
-var path = require('path');
-var webpack = require('webpack');
-//var OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
-
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
+    'webpack-dev-server/client?http://localhost:9090',
     'webpack/hot/only-dev-server',
     './src/js/index',
   ],
 
   output: {
-    path: path.join(__dirname, './'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/assets/js',
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    //new OpenBrowserPlugin({ url: 'http://localhost:3000' })
+    new OpenBrowserPlugin({ url: 'http://localhost:9090' })
   ],
 
   module: {
     loaders: [
       {
         test: /\.js$/,
-        loaders: [ 'babel'],
+        loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src'),
-
       },
-
+      {
+        test: /(\.css|\.scss)$/,
+        include: path.join(__dirname, 'src'),
+        loaders: ['style', 'css?sourceMap', 'postcss', 'sass?sourceMap']
+      },
     ]
-  }
+  },
+  postcss: [autoprefixer({ browsers: ['last 50 versions'] })]
+
 };

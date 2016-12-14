@@ -12,9 +12,11 @@ const reducer = combineReducers({
 
 
 export default function configureStore(initialState = INITIAL_STATE) {
+
   const logger = createLogger();
-  const middleware  = applyMiddleware(thunk,logger);
-  const store = createStore(reducer, initialState,compose(
+  const middleware = applyMiddleware( thunk, logger);
+
+  const store = createStore(reducer, initialState, compose(
       middleware,
       window.devToolsExtension ? window.devToolsExtension() : f => f
   ));

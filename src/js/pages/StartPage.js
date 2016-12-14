@@ -7,7 +7,7 @@ import fecha from 'fecha';
 import FormWr from '../components/FormWr/FormWr';
 import Button from '../components/Button/Button';
 import Spinner from '../components/Spinner/Spinner';
-
+import DropdownList from 'react-widgets/lib/DropdownList';
 
 
 import  {renderTextField, renderDropdownList, renderDropdownListSaveChange} from '../components/Fields/Fields';
@@ -89,12 +89,7 @@ export default class StartPage extends Component {
 
                     <div className="search-form">
                         <h3>itunes search</h3>
-                        <FormWr title=""
-                                description=""
-                                onSubmit={::this.click}
-                                autoComplete="off"
-                                buttonText="пошук"
-                                key="step1">
+                        <form onSubmit={(e)=>e.preventDefault()}>
 
                                 <div className="input-box">
                                     <input
@@ -116,9 +111,8 @@ export default class StartPage extends Component {
 
 
 
-                                <Field
+                                <DropdownList
                                     name="currentCategory"
-                                    component={renderDropdownListSaveChange}
                                     data={categories}
                                     valueField="id"
                                     textField="name"
@@ -127,9 +121,8 @@ export default class StartPage extends Component {
                                     onChange={value => this.setState({currentCategory: value, currentEntity:''})}
                                     //onChange={::this.saveShop}
                                 />
-                                <Field
+                                <DropdownList
                                     name="currentEntities"
-                                    component={renderDropdownListSaveChange}
                                     data={categoriesEntities}
                                     valueField="id"
                                     textField="name"
@@ -143,7 +136,7 @@ export default class StartPage extends Component {
                                 <Button type={'white'}
                                     onClick={::this.searchForm}
                                     children="search"/>
-                        </FormWr>
+                        </form>
 
                     </div>
 
@@ -192,7 +185,7 @@ export default class StartPage extends Component {
                         {
                             isLoaded == "wasLoad" &&(
                                <p>
-                                   iTunes haven't this content. Please, try other categories.
+                                   iTunes doesn't have this content. Please, try other categories.
                                </p>
 
                             )
