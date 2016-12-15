@@ -2,15 +2,11 @@
 import * as actions from '../actions';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {Field} from 'redux-form';
 import fecha from 'fecha';
-import FormWr from '../components/FormWr/FormWr';
 import Button from '../components/Button/Button';
 import Spinner from '../components/Spinner/Spinner';
 import DropdownList from 'react-widgets/lib/DropdownList';
 
-
-import  {renderTextField, renderDropdownList, renderDropdownListSaveChange} from '../components/Fields/Fields';
 
 const mapStateToProps = (state) => state;
 
@@ -35,8 +31,6 @@ export default class StartPage extends Component {
     componentDidMount() {
 
     }
-
-
     getMedia(str) {
         if (str.indexOf(' ') === -1) {
             return str.toLowerCase();
@@ -49,10 +43,9 @@ export default class StartPage extends Component {
     searchForm(){
         let {nameArtist, currentCategory, currentEntity, limitList} = this.state;
         let data = {nameArtist, currentCategory, currentEntity, limitList}
-        console.log('searchForm', data)
+       // console.log('searchForm', data)
         this.props.actions.search(data);
     }
-
 
     saveName(e){
         let name = e.target.value
@@ -63,9 +56,6 @@ export default class StartPage extends Component {
         let limit = e.target.value
 
         this.setState({limitList:limit});
-    }
-    click(res) {
-
     }
 
 
@@ -117,9 +107,9 @@ export default class StartPage extends Component {
                                     valueField="id"
                                     textField="name"
                                     placeholder="Category"
-                                    valueCurrent={currentCategory}
+                                    defaultValue={'all'}
                                     onChange={value => this.setState({currentCategory: value, currentEntity:''})}
-                                    //onChange={::this.saveShop}
+
                                 />
                                 <DropdownList
                                     name="currentEntities"
@@ -127,9 +117,9 @@ export default class StartPage extends Component {
                                     valueField="id"
                                     textField="name"
                                     placeholder="Category entity"
-                                    valueCurrent={currentEntity}
+                                    defaultValue={"Category entity"}
                                     onChange={value => this.setState({currentEntity: value})}
-                                    //onChange={::this.saveShop}
+
                                 />
 
 

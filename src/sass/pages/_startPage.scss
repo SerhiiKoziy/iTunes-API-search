@@ -20,11 +20,16 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      .input-box{
+      &>div{
         width: 45%;
+      }
+
+      .input-box{
+
       }
       .btn{
         width: 45%;
+        margin: 20px 0 0 0;
       }
     }
   }

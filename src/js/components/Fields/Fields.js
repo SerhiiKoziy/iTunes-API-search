@@ -27,26 +27,6 @@ export const renderTextField = (props) =>
     )
 };
 
- /*export const renderDownloadFieldFirst = (props) => {
-        const {id, input, type, label, readonly, accept, meta: {touched, error}, ...custom}  = props;
-
-        return (
-
-            <DownloadField placeholder={label}
-                           errorVisible={touched && error}
-                           errorText={error}
-                           id={id}
-                           accept = {accept}
-                           type={type}
-                           {...input}
-                           {...custom}
-                           autoComplete="off"
-            />
-        )
-    };
-*/
-
-
     export const renderDropdownListSaveChange = ({valueCurrent,valueField, input, meta: { touched, error }, ...rest, onBlur }) =>
     (
         <div className="input-box">

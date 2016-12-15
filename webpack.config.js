@@ -19,7 +19,10 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new OpenBrowserPlugin({ url: 'http://localhost:9090' })
+    new OpenBrowserPlugin({ url: 'http://localhost:9090' }),
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+    })
   ],
 
   module: {
