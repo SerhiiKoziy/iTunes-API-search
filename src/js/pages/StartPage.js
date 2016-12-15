@@ -153,9 +153,7 @@ export default class StartPage extends Component {
                                                         </div>
                                                         <div className="price-view">
                                                             {
-                                                                item.price == 0 ?
-                                                                    <p>free</p>
-                                                                 : <p>${item.trackPrice}</p>
+                                                                item.price == 0 ? <p>free</p> : <p>${item.trackPrice}</p>
                                                             }
 
                                                             <p>{fecha.format(new Date(item.releaseDate), 'MMM D, YYYY')}</p>

@@ -1,7 +1,5 @@
 import * as types from '../constants/ActionTypes';
 import * as API from '../constants/Api';
-
-
 import {push} from 'react-router-redux';
 
 
@@ -19,7 +17,7 @@ export function search(data){
     let {nameArtist, currentCategory, currentEntity, limitList} = data;
 
     return dispatch =>{
-        //this.setState({isLoaded:false});
+
         dispatch(requestApiResult());
         if(nameArtist.length > 0){
             $.ajax({
