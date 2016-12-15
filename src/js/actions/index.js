@@ -29,7 +29,7 @@ export function search(data){
                 dataType: "jsonp",
                 success: function(data, dataType){
                     let results = data.results
-                    console.log(data);
+                    //console.log(data);
 
                     if(data.results.length > 0){
                         dispatch(receiveApiResult(results))
