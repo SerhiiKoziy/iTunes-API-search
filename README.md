@@ -1,4 +1,4 @@
-# react-basic
+#iTunesSearch
 
 #npm install
 
